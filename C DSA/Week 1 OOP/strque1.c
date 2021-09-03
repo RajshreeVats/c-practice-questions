@@ -1,33 +1,31 @@
 #include <stdio.h>
-struct student {
-    char name[50];
+
+struct student
+{
     int roll;
     int marks[5];
+    char name[50];
 };
 
-int main() {
-    struct student s[5];
-    printf("Enter name: ");
-    scanf("%s", &s.name);
-
-    printf("Enter roll number: ");
+int main()
+{
+    struct student s;
+    printf("Enter details of Student :\n");
+    printf("Enter roll number : ");
     scanf("%d", &s.roll);
-
-    printf("Enter marks: ");
-    for(int i=0;i<5;i++) {
-        scanf("%d", &s.marks[i]);
+    printf("Enter Name : ");
+    scanf(" %s", s.name);
+    printf("Enter marks in 5 subject : ");
+    for (int j = 0; j < 5; j++)
+    {
+        scanf("%d", &s.marks[j]);
     }
-
-    printf("Displaying Information:\n");
-    printf("Name: ");
-    printf("%s", s.name);
-    printf("Roll number: %d\n", s.roll);
-    
-    printf("marks: ");
-    for(int i=0;i<5;i++) {
-      printf("%d\n", s.marks[i]);  
+    printf("\n\nDisplaying Name, Roll and Marks of student :\n\n");
+    printf("Name : \t\t%s\n", s.name);
+    printf("Roll No :\t%d\n", s.roll);
+    for (int j = 0; j < 5; j++)
+    {
+        printf("Marks in Subject %d is %d\n", j + 1, s.marks[j]);
     }
-    
-
     return 0;
 }
