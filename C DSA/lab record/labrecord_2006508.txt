@@ -1,0 +1,1560 @@
+2006508 Rajshree Vatsa LAB-1 DATE-30/07/2021
+TOPIC :- STRUCTURES AND ARRAY
+
+Program 1
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct data
+{
+
+    int *roll;
+    char *name;
+    float *cgpa;    
+};
+
+int main()
+{
+
+    struct data *f;
+
+    char str[100];
+
+    f->roll = (int *)malloc(sizeof(int));
+    f->name = (char *)malloc(20 * sizeof(char));
+    f->cgpa = (float *)malloc(sizeof(float));
+
+    for (int i = 0; i <= 78; i++)
+    {
+        printf("Enter your roll number: ");
+        scanf("%d", f->roll);
+
+        printf("Enter your cgpa: ");
+        scanf("%f", f->cgpa);
+
+        printf("Enter your name: ");
+        fflush(stdin);
+        gets(str);
+
+        f -> name = str;
+
+        printf("Your details are: %s\t\t%d\t\t%f\n", f->name, *(f->roll), *(f->cgpa));
+    }
+
+    free(f);
+
+    return 0;
+}
+
+
+Program 2
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    
+int *roll;
+char *name;
+float *cgpa;
+char str[100];
+
+roll = (int*)malloc(sizeof(int));
+name = (char*)malloc(20*sizeof(char));
+cgpa = (float*)malloc(sizeof(float));
+
+printf("Enter your roll: ");
+scanf("%d", roll);
+
+printf("Enter your cgpa: ");
+scanf("%f", cgpa);
+
+printf("Enter your name: ");
+fflush(stdin);
+gets(str);
+
+name = str;
+
+printf("Your details are: %s\t\t%d\t\t%f\n", name, *roll, *cgpa);
+
+free (roll);
+free (name);
+free (cgpa);
+
+return 0;
+
+}
+
+
+Program 3
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int *n, i;
+
+    n = (int*)malloc(sizeof(int));
+
+    printf("Print all even numbers till: ");
+    scanf("%d", n);
+
+    printf("All the even numbers from 1 to %d are: \n", *n);
+
+    for (i = 2; i <= *n; i+=2)
+    {
+        
+        printf("%d\n", i);
+        
+    }
+
+    free (n);
+
+    return 0;    
+}
+
+
+Program 4
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int *array, *n, i;
+
+    n = (int*)malloc(sizeof(int));
+    array = (int*)calloc(*n,sizeof(int));
+
+    printf("Enter the size of the array: ");
+    scanf("%d", n);
+
+    for (i = 0; i < *n; i++)
+    {
+        printf("Enter the array elements: ");
+        scanf("%d", &array[i]);
+    }
+
+    printf("The even numbers are: ");
+    for (i = 0; i < *n; i++)
+    {
+        if (array[i]%2==0)
+        {
+            printf("%d\t",array[i]);
+        }
+    }
+
+    printf("The odd numbers are: ");
+    for (i = 0; i < *n; i++)
+    {
+        if (array[i]%2==1)
+        {
+            printf("%d\t",array[i]);
+        }
+    }
+    
+    free(array);
+
+    return 0;  
+    
+}
+
+
+Program 5 
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int *array, *n, i;
+
+    n = (int*)malloc(sizeof(int));
+    array = (int*)calloc(*n,sizeof(int));
+
+    printf("Enter the size of the array: ");
+    scanf("%d", n);
+
+    for (i = 0; i < *n; i++)
+    {
+        printf("Enter the array elements: ");
+        scanf("%d", &array[i]);
+    }
+
+    printf("The even numbers are: ");
+    for (i = 0; i < *n; i++)
+    {
+        if (array[i]%2==0)
+        {
+            printf("%d\t",array[i]);
+        }
+    }
+
+    printf("The odd numbers are: ");
+    for (i = 0; i < *n; i++)
+    {
+        if (array[i]%2==1)
+        {
+            printf("%d\t",array[i]);
+        }
+    }
+    
+    free(array);
+
+    return 0;  
+    
+}
+
+2006508 Rajshree Vatsa LAB-02 DATE-06/08/2021
+TOPIC :- ARRAYS
+
+Q1.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int *array, *n, i;
+
+    n = (int*)malloc(sizeof(int));
+    array = (int*)calloc(*n,sizeof(int));
+
+    printf("Enter the size of the array: ");
+    scanf("%d", n);
+
+    for (i = 0; i < *n; i++)
+    {
+        printf("Enter the array elements: ");
+        scanf("%d", &array[i]);
+    }
+
+    printf("The even numbers are: ");
+    for (i = 0; i < *n; i++)
+    {
+        if (array[i]%2==0)
+        {
+            printf("%d\t",array[i]);
+        }
+    }
+
+    printf("The odd numbers are: ");
+    for (i = 0; i < *n; i++)
+    {
+        if (array[i]%2==1)
+        {
+            printf("%d\t",array[i]);
+        }
+    }
+    
+    free(array);
+
+    return 0;  
+    
+}
+
+Q2. 
+
+
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int main()
+{
+ 
+    
+    int* ptr;
+    int n, i, sum=0;
+ 
+   
+    printf("Enter number of elements:");
+    scanf("%d",&n);
+    printf("Entered number of elements: %d\n", n);
+ 
+    // Dynamically allocate memory using malloc()
+    ptr = (int*)malloc(n * sizeof(int));
+ 
+    
+    // allocated by malloc or not
+    if (ptr == NULL) {
+        printf("Memory not allocated.\n");
+        exit(0);
+    }
+    else {
+ 
+        
+        printf("Memory successfully allocated using malloc.\n");
+ 
+        
+        for (i = 0; i < n; ++i) {
+            scanf("%d", ptr + i);
+              sum += *(ptr + i);
+        }
+
+        
+        printf("Sum = %d", sum);
+        
+ 
+        
+        printf("The elements of the array are: ");
+        for (i = 0; i < n; ++i) {
+            printf("%d, ", ptr[i]);
+        }
+    }
+ 
+    return 0;
+}
+
+Q3.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+  int n;
+  double *data;
+  printf("Enter the total number of elements: ");
+  scanf("%d", &n);
+
+  
+  data = (double *)calloc(n, sizeof(double));
+  if (data == NULL) {
+  printf("Error!!! memory not allocated.");
+  exit(0);
+  }
+
+  
+  for (int i = 0; i < n; ++i) {
+  scanf("%lf", data + i);
+  }
+
+  
+  for (int i = 1; i < n; ++i) {
+    if (*data < *(data + i)) {
+      *data = *(data + i);
+    }
+  }
+  printf("Largest number = %.2lf", *data);
+
+  free(data);
+
+  return 0;
+}
+
+Q4.
+
+
+#include <stdio.h>
+
+
+#include <stdlib.h>
+int main()
+
+{
+	
+	int *arr,n,i,j,temp;
+
+	printf("Enter size of array:");
+	scanf("%d",&n);
+
+	arr=calloc(sizeof(int),n);
+	printf("Enter %d Elements:",n);
+	for(i=0;i<n;i++)
+
+	{
+
+		scanf("%d",arr+i);
+
+	}
+
+	
+		
+	for(i=0,j=n-1;i<j;i++,j--)
+	
+	{
+
+		temp=*(arr+i);
+		*(arr+i)=*(arr+j);
+		*(arr+j)=temp;
+	}
+
+	printf("After reversing the array:\n");
+	for(i=0;i<n;i++)
+
+	{
+
+		printf("%d\n",*(arr+i));
+
+	}
+
+	
+	return 0;
+
+}
+
+Q5.
+
+
+#include <math.h>
+#include <stdio.h>
+float calculateSD(float data[]);
+int main() {
+    int i;
+    float data[10];
+    printf("Enter 10 elements: ");
+    for (i = 0; i < 10; ++i)
+        scanf("%f", &data[i]);
+    printf("\nStandard Deviation = %.6f", calculateSD(data));
+    return 0;
+}
+
+float calculateSD(float data[]) {
+    float sum = 0.0, mean, SD = 0.0;
+    int i;
+    for (i = 0; i < 10; ++i) {
+        sum += data[i];
+    }
+    mean = sum / 10;
+    for (i = 0; i < 10; ++i) {
+        SD += pow(data[i] - mean, 2);
+    }
+    return sqrt(SD / 10);
+}
+
+Q6.
+
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int main()
+{
+    int *iVar;
+    char *cVar;
+    float *fVar;
+     
+    /*allocating memory dynamically*/
+     
+    iVar=(int*)malloc(1*sizeof(int));
+    cVar=(char*)malloc(1*sizeof(char));
+    fVar=(float*)malloc(1*sizeof(float));
+     
+    printf("Enter roll value: ");
+    scanf("%d",iVar);
+     
+    printf("Enter name value: ");
+    scanf(" %c",cVar);
+     
+    printf("Enter cgpa value: ");
+    scanf("%f",fVar);
+     
+    printf("Inputted value are: %d, %c, %.2f\n",*iVar,*cVar,*fVar);
+     
+    /*free allocated memory*/
+    free(iVar);
+    free(cVar);
+    free(fVar);
+ 
+    return 0;
+}
+
+2006508 Rajshree Vatsa LAB-03 DATE-13/08/2021
+TOPIC :- ARRAYS
+
+Q1.
+
+
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int main()
+{
+    printf("no. of rows fixed\n\n");
+    int *row[3],i,j,col;
+    printf("enter the elements : ");
+    for(i=0; i<3; i++) {
+        col = 3*(i+1);
+        row[i] = (int *)malloc(col*sizeof(int));
+        for(j=0; j<col; j++) {
+            scanf("%d", &row[i][j]);
+        }
+
+    }
+    for(i=0; i<3; i++) {
+        for(j=0; j<col; j++) {
+            printf("%d\t", row[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\n\n no. of columns fixed\n\n");
+    int(*p)[3],rows;
+    printf("enter the no. of rows : ");
+    scanf("%d", &rows);
+    p = (int(*)[3])malloc(rows*3*sizeof(int));
+    printf("enter the elements : ");
+    for(i=0; i<rows; i++) {
+        for(j=0; j<3; j++) {
+            scanf("%d", &p[i][j]);
+        }
+
+    }
+    for(i=0; i<rows; i++) {
+        for(j=0; j<3; j++) {
+            printf("%d\t", p[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\n\n using double pointers \n\n");
+    int **pt, rowss, column;
+    printf("enter the no. of rows and columns : ");
+    scanf("%d%d", &rowss, &column);
+    pt = (int**)malloc(rowss*sizeof(int));
+    printf("enter the elements : ");
+    for(i=0; i<rowss; i++) {
+        pt[i] = (int *)malloc(column*sizeof(int));
+        for(j=0; j<column; j++){
+            scanf("%d", &pt[i][j]);
+        }
+    }
+    for(int i = 0; i < rowss; i++) {
+        for(j=0; j<column; j++) {
+            printf("%d\t", pt[i][j]);
+        }
+        printf("\n");
+    }
+
+
+   return 0;
+}
+
+Q2.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void InpMat(int** mat, int rows, int cols)
+{
+	printf("Please enter elements matrix:\n");
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < cols; j++)
+			scanf("%i", &mat[i][j]);
+	}
+}
+
+void OutMat(int** mat, int rows, int cols)
+{
+	printf("==\n");
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < cols; j++)
+			printf("%3d", mat[i][j]);
+		printf("\n");
+	}
+}
+
+void ChangeMat(int** mat, int rows, int cols)
+{
+	int l = 0;
+	int r = cols-1;
+	while (l < r)
+	{
+		for (int i = 0; i < rows; i++)
+		{
+			int temp = mat[i][l];
+			mat[i][l] = mat[i][r];
+			mat[i][r] = temp;
+		}
+		l++;
+		r--;
+	}
+}
+int main()
+{
+	int rows, cols;
+	printf("Please enter rows and columns of matrix:\n");
+	scanf("%i%i", &rows, &cols);
+	int** mat = (int**)malloc(sizeof(int*) * (size_t)rows);
+	for (int i = 0; i < rows; i++)
+		mat[i] = (int*)malloc(sizeof(int) * (size_t)cols);
+	InpMat(mat, rows, cols);
+	ChangeMat(mat, rows, cols);
+	OutMat(mat, rows, cols);
+	free(mat);
+	return 0;
+}
+
+Q3.
+
+#include<stdlib.h>
+#include<stdio.h>
+void nonzero(int **q,int r,int c){
+    int count=0;
+    int i,j;
+    for(i=0;i<r;i++)
+        for(j=0;j<c;j++)
+            if(q[i][j]!=0)
+                count++;
+
+    printf("\nThe number of nonzero elements are: %d",count);
+}
+
+void sumOfDiagonal(int **q,int r,int c){
+    int rl;
+    int i,j;
+    for(i=0;i<r;i++)
+        for(j=0;j<c;j++)
+            if(j<i)
+                rl+=q[i][j];
+    printf("\nThe sum of elements above the leading diagonal is: %d",rl)    ;        
+}
+void minorDiagonal(int **q,int r,int c){
+    int i,j;
+    printf("\nThe elements below the minor diagonal is: \n");
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+            if(i<j)
+                printf("%d ",q[i][j]);
+        printf("\n")        ;
+    }
+}
+void product(int **q,int r,int c){
+    int lp=1,rp=1;
+    int i,j;
+    for(i=0;i<r;i++)
+    for(j=0;j<c;j++)
+    {
+        if(i==j)
+            rp*=q[i][j];
+        if(i+j==r)
+            lp*=q[i][j];
+
+    }
+    printf("\nThe product of right diagonal is: %d",rp);
+    printf("\nThe product of left diagonal is: %d",lp);
+
+}
+int main(){
+    int r=3,c=3;
+    
+    int **a;
+    int i,j;
+    a=(int **) malloc (r*sizeof(int *));
+    for(i=0;i<r;i++)
+        a[i] = (int *) malloc (c*sizeof(int));
+    for(i=0;i<r;i++)
+        for(j=0;j<c;j++)
+        {   
+            printf("Enter the value of a[%d][%d]: ",i,j);
+            scanf("%d",&a[i][j]);
+        }
+    printf("The original array is: \n");
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+            printf("%d ",a[i][j]);
+        printf("\n");    
+    }    
+    nonzero(a,r,c);
+    product(a,r,c);
+    minorDiagonal(a,r,c);
+    sumOfDiagonal(a,r,c);
+}
+
+
+2006508 Rajshree Vatsa LAB-04 DATE-27/08/2021
+TOPIC :- LINKED LIST
+
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct node
+{
+    int data;
+    struct node *next;
+} node;
+
+node *head;
+
+node *createNode(int data)
+{
+    node *p = (node *)malloc(sizeof(node));
+    p->data = data;
+    p->next = NULL;
+    return p;
+}
+
+void traversal(node *head)
+{
+    while (head)
+    {
+        printf("%d-->", head->data);
+        head = head->next;
+    }
+    printf("NULL\n");
+}
+
+void traversalRecursion(node *head)
+{
+    if (head)
+    {
+        printf("%d-->", head->data);
+        traversalRecursion(head->next);
+    }
+}
+
+int lengthList(node *head)
+{
+    int count = 0;
+    while (head)
+    {
+        count++;
+        head = head->next;
+    }
+    return count;
+}
+
+int countRecursion(node *head)
+{
+    if (head == NULL)
+        return 0;
+    else
+        return countRecursion(head->next) + 1;
+}
+
+int maxInList(node *head)
+{
+    int max = 0;
+    while (head)
+    {
+        if (max < head->data)
+            max = head->data;
+        head = head->next;
+    }
+    return max;
+}
+
+int maxRecursive(node *head)
+{
+    int max;
+    if(head == NULL)
+        return -1;
+    else
+    {
+        max = maxRecursive(head->next);
+        return max > head->data ? max : head->data;
+    }
+}
+
+int minInList(node *head)
+{
+    int min = head->data;
+    while (head)
+    {
+        if (min > head->data)
+            min = head->data;
+        head = head->next;
+    }
+    return min;
+}
+
+int minRecursive(node *head, int min)
+{
+    if(head == NULL)
+        return min;
+    else
+    {
+        if(head->data < min)
+            min = head->data;
+        return minRecursive(head->next, min);
+    }
+}
+
+int add(node *head)
+{
+    int sum = 0;
+    while (head)
+    {
+        sum += head->data;
+        head = head->next;
+    }
+    return sum;
+}
+
+int addRecursion(node *head)
+{
+    if (head == NULL)
+        return 0;
+    else
+        return addRecursion(head->next) + head->data;
+}
+
+int main()
+{
+    node *t;
+    int a, data;
+
+    printf("Enter the data for the node: ");
+    scanf("%d", &data);
+    t = createNode(data);
+    head = t;
+    do
+    {
+        printf("Enter the data for next node: ");
+        scanf("%d", &data);
+        t = createNode(data);
+        node *w = head;
+        while (w->next)
+        {
+            w = w->next;
+        }
+        w->next = t;
+        printf("Enter 1 to add node or 0 to stop: ");
+        scanf("%d", &a);
+    } while (a);
+
+    int i;
+    
+    do
+    {
+        printf("Enter\n1 for Display\n2 for Length of list\n3 for sum of elements of list\n4 for finding maximum element\n5 for finding minimum value\n0 to exit\n");
+        scanf("%d", &i);
+        switch (i)
+        {
+        case 1:
+        {
+            int x;
+            printf("Enter\n1 for iterative  0 for recursive\n");
+            scanf("%d", &x);
+            if (x)
+                traversal(head);
+            else
+                traversalRecursion(head);
+
+            break;
+        }
+        case 2:
+        {
+            int x;
+            printf("Enter\n1 for iterative  0 for recursive\n");
+            scanf("%d", &x);
+            if (x)
+                printf("Length of list: %d\n", lengthList(head));
+            else
+                printf("Length of list: %d\n", countRecursion(head));
+            break;
+        }
+        case 3:
+        {
+            int x;
+            printf("Enter\n1 for iterative  0 for recursive\n");
+            scanf("%d", &x);
+            if (x)
+                printf("Sum of elements in list: %d\n", add(head));
+            else
+                printf("Sum of elements in list: %d\n", addRecursion(head));
+
+            break;
+        }
+        case 4:
+        {
+            int x;
+            printf("Enter\n1 for iterative  0 for recursive\n");
+            scanf("%d", &x);
+            if (x)
+                printf("Maximum element in list: %d\n", maxInList(head));
+            else
+                printf("Maximum element in list: %d\n", maxRecursive(head));
+            break;
+        }
+        case 5:
+        {
+            int x, min = 32741;
+            printf("Enter\n1 for iterative  0 for recursive\n");
+            scanf("%d", &x);
+            if (x)
+                printf("Minimum element in list: %d\n", minInList(head));
+            else
+                printf("Minimum element in list: %d\n", minRecursive(head, min));
+            break;
+        }
+        }
+    } while (i);
+
+    return 0;
+}
+
+Q2.
+
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct node
+{
+    int data;
+    struct node *next;
+}node;
+
+node *head = NULL;
+
+node *createNode(int data)
+{
+    node *ptr = (node *)malloc(sizeof(node));
+    ptr->data = data;
+    ptr->next = NULL;
+    return ptr;
+}
+
+int countNode(node *head)
+{
+    int count = 0;
+    while (head)
+    {
+        count++;
+        head = head->next;
+    }
+    return count;
+}
+
+void traversal(node *head)
+{
+    while(head)
+    {
+        printf("%d-->", head->data);
+        head = head->next;
+    }
+    printf("NULL\n");
+}
+
+void insertAtHead(node **head, int data)
+{
+    node *in;
+    in = createNode(data);
+    in->next = *head;
+    *head = in;
+}
+
+void insertAtEnd(node *head, int data)
+{
+    node *in;
+    in = createNode(data);
+    if(head == NULL)
+        printf("List is empty!\n");
+    while(head->next)
+    {
+        head = head->next;
+    }
+    head->next = in;
+}
+
+node *insertAtIndex(node *head, int data, int index)
+{
+    node *in, *q = NULL, *p = head;
+    in = createNode(data);
+
+    if(index < 1 && index > countNode(head))
+    {
+        printf("Invalid index!\n");
+        return head;
+    }
+
+    if(index == 1)
+    {
+        in->next = head;
+        head = in;
+        return head;
+    }
+    else
+    {
+        for(int i = 1; i < index; i++)
+        {
+            q = p;
+            p = p->next;
+        }
+        in->next = q->next;
+        q->next = in;
+        return head;
+    }
+     
+}
+
+node *deleteAtIndex(node *head, int index)
+{
+    node *in, *q = NULL, *p = head;
+
+    if(index < 1 && index > countNode(head))
+    {
+        printf("Invalid index!\n");
+        return head;
+    }
+
+    if(index == 1)
+    {
+        in = head;
+        head = head->next;
+        free(in);
+        return head;
+    }
+    else
+    {
+        for(int i = 1; i < index; i++)
+        {
+            q = p;
+            p = p->next;
+        }
+        in = p;
+        q->next = p->next;
+        free(in);
+        return head;
+    }
+     
+}
+
+void deleteHead(node **head)
+{
+    node *temp = *head;
+    *head = (*head)->next;
+    free(temp);
+}
+
+void deleteTail(node *head)
+{
+    node *temp;
+    while(head->next)
+    {
+        temp = head;
+        head = head->next;
+    }
+    temp->next = NULL;
+    free(head);
+    
+}
+
+
+
+int main()
+{
+    node *t;
+    int a, data;
+
+    printf("Enter the data for the node: ");
+    scanf("%d", &data);
+    t = createNode(data);
+    head = t;
+    do{
+        printf("Enter the data for next node: ");
+        scanf("%d", &data);
+        t = createNode(data);
+        node *w = head;
+        while(w->next)
+        {
+            w = w->next; 
+        }
+        w->next = t;
+        printf("Enter 1 to add node or 0 to stop: ");
+        scanf("%d", &a);
+    }while(a);
+
+    int i;
+    
+    do
+    {
+        printf("Enter\n1 for Display\n2 for insertion at head\n3 for insertion at end\n4 for insertion at index\n5 for deleting head\n6 for deletion of tail\n7 for deleting at index\n0 to exit\n");
+        scanf("%d", &i);
+        switch (i)
+        {
+        case 1:
+        {
+            traversal(head);
+            break;
+        }
+        case 2:
+        {
+            int x;
+            printf("Enter the element to insert: ");
+            scanf("%d", &x);
+            insertAtHead(&head, x);
+            break;
+        }
+        case 3:
+        {
+            int x;
+            printf("Enter the element to insert: ");
+            scanf("%d", &x);
+            insertAtEnd(head, x);
+            break;
+        }
+        case 4:
+        {
+            int x, index;
+            printf("Enter the element to insert: ");
+            scanf("%d", &x);
+            printf("Enter the index: ");
+            scanf("%d", &index);
+            head = insertAtIndex(head, x, index);
+            break;
+        }
+        case 5:
+        {
+            deleteHead(&head);
+            break;
+        }
+        case 6:
+        {
+            deleteTail(head);
+            break;
+        }
+        case 7:
+        {
+            int index;
+            printf("Enter the index you want to delete: ");
+            scanf("%d", &index);
+            head = deleteAtIndex(head, index);
+            break;
+        }
+        default:
+        {
+            printf("Invalid input!\n");
+        }
+        }
+    } while (i);
+    
+    return 0;
+}
+
+
+2006508 Rajshree Vatsa LAB-05 DATE-03/09/2021
+TOPIC :- CIRCULAR DOUBLY LINKED LIST
+
+Q1.
+
+#include <stdio.h>
+#include <stdlib.h>
+ 
+struct node
+{
+    int num;
+    struct node *next;
+    struct node *prev;
+};
+
+void create(struct node *head)
+{
+    int c, ch;
+    struct node *temp, *rear;
+ 
+    do
+    {
+        printf("Enter number: ");
+        scanf("%d", &c);
+        temp = (struct node *)malloc(sizeof(struct node));
+        temp->num = c;
+        temp->next = NULL;
+        temp->prev = NULL;
+        head = temp;
+        temp->next = head;
+        head -> prev = temp;
+        printf(" continue adding [1/0]: ");
+        scanf("%d", &ch);
+    } while (ch != 0);
+    printf("\n");
+}
+void display(struct node *p)
+{
+    while (p != NULL)
+    {
+        printf("%d\t", p->num);
+        p = p->next;
+    }
+    printf("\n");
+}
+
+int main() {
+ 
+  struct node *p = NULL;
+    int n;
+ 
+    printf("Enter data to add into the list\n");
+    create(p);
+    printf("Displaying the nodes in the CD list:\n");
+    display(p);
+
+  return 0; 
+}
+
+Q2.
+#include <stdio.h>
+#include <stdlib.h>
+ 
+struct node
+{
+    int num;
+    struct node *next;
+};
+void create(struct node **head)
+{
+    int c, ch;
+    struct node *temp, *rear;
+ 
+    do
+    {
+        printf("Enter number: ");
+        scanf("%d", &c);
+        temp = (struct node *)malloc(sizeof(struct node));
+        temp->num = c;
+        temp->next = NULL;
+        if (*head == NULL)
+        {
+            *head = temp;
+        }
+        else
+        {
+            rear->next = temp;
+        }
+        rear = temp;
+        printf(" continue adding [1/0]: ");
+        scanf("%d", &ch);
+    } while (ch != 0);
+    printf("\n");
+}
+void reverse(struct node **head)
+{
+    struct node *a, *b, *c;
+ 
+    a = b = c = *head;
+    a = a->next->next;
+    b = b->next;
+    c->next = NULL;
+    b->next = c;
+ 
+    while (a != NULL)
+    {
+        c = b;
+        b = a;
+        a = a->next;
+        b->next = c;
+    }
+    *head = b;
+}
+ 
+void display(struct node *p)
+{
+    while (p != NULL)
+    {
+        printf("%d\t", p->num);
+        p = p->next;
+    }
+    printf("\n");
+}
+
+int main()
+{
+    struct node *p = NULL;
+    int n;
+ 
+    printf("Enter data to add into the list\n");
+    create(&p);
+    printf("Displaying the nodes in the list:\n");
+    display(p);
+    printf("Reversing the list...\n");
+    reverse(&p);
+    
+ 
+    return 0;
+}
+
+Q3.
+
+#include <stdio.h>
+#include <stdlib.h>
+ 
+struct node
+{
+    struct node *prev;
+    int n;
+    struct node *next;
+}*h,*temp,*temp1,*temp2,*temp4;
+
+void traversebeg()
+{
+    temp2 = h;
+ 
+    if (temp2 == NULL)
+    {
+        printf("List empty to display \n");
+        return;
+    }
+    printf("\n Linked list elements from begining : ");
+ 
+    while (temp2->next != NULL)
+    {
+        printf(" %d ", temp2->n);
+        temp2 = temp2->next;
+    }
+    printf(" %d ", temp2->n);
+}
+void traverseend(int i)
+{
+    if (temp2 != NULL)
+    {
+        i = temp2->n;
+        temp2 = temp2->next;
+        traverseend(i);
+        printf(" %d ", i);
+    }
+}
+void create()
+{
+    int data;
+    int count =0;
+ 
+    temp =(struct node *)malloc(1*sizeof(struct node));
+    temp->prev = NULL;
+    temp->next = NULL;
+    printf("\n Enter value to node : ");
+    scanf("%d", &data);
+    temp->n = data;
+    count++;
+}
+void insertSpecific()
+{
+    int pos, i = 2, count = 0;
+ 
+    printf("\n Enter position to be inserted : ");
+    scanf("%d", &pos);
+    temp2 = h;
+ 
+
+    if ((h == NULL) && (pos == 1))
+    {
+        create();
+        h = temp;
+        temp1 = h;
+        return;
+    }
+    else
+    {
+        while (i < pos)
+        {
+            temp2 = temp2->next;
+            i++;
+        }
+        create();
+        temp->prev = temp2;
+        temp->next = temp2->next;
+        temp2->next->prev = temp;
+        temp2->next = temp;
+    }
+}
+void delete()
+{
+    int i = 1, pos, count = 0;
+ 
+    printf("\n Enter position to be deleted : ");
+    scanf("%d", &pos);
+    temp2 = h;
+ 
+    if ((pos < 1) || (pos >= count + 1))
+    {
+        printf("\n Error : Position out of range to delete");
+        return;
+    }
+    if (h == NULL)
+    {
+        printf("\n Error : Empty list no elements to delete");
+        return;
+    }
+    else
+    {
+        while (i < pos)
+        {
+            temp2 = temp2->next;
+            i++;
+        }
+        if (i == 1)
+        {
+            if (temp2->next == NULL)
+            {
+                printf("Node deleted from list");
+                free(temp2);
+                temp2 = h = NULL;
+                return;
+            }
+        }
+        if (temp2->next == NULL)
+        {
+            temp2->prev->next = NULL;
+            free(temp2);
+            printf("Node deleted from list");
+            return;
+        }
+        temp2->next->prev = temp2->prev;
+        if (i != 1)
+            temp2->prev->next = temp2->next;   
+        if (i == 1)
+            h = temp2->next;
+        printf("\n Node deleted");
+        free(temp2);
+    }
+    count--;
+}
+ 
+void search()
+{
+    int data, count = 0;
+    temp2 = h;
+ 
+    if (temp2 == NULL)
+    {
+        printf("\n Error : List empty to search for data");
+        return;
+    }
+    printf("\n Enter value to search : ");
+    scanf("%d", &data);
+    while (temp2 != NULL)
+    {
+        if (temp2->n == data)
+        {
+            printf("\n Data found in %d position",count + 1);
+            return;
+        }
+        else
+             temp2 = temp2->next;
+            count++;
+    }
+    printf("\n Error : %d not found in list", data);
+}
+
+int main () { 
+  
+    int ch;
+ 
+    h = NULL;
+    temp = temp1 = NULL;
+
+    
+ 
+    printf("\n 1 - create list ");
+    printf("\n 2 - Insert at i ");
+    printf("\n 3 - Delete at i");
+    printf("\n 4 - Display from beginning");
+    printf("\n 5 - Display from end");
+    printf("\n 6 - Search for element");
+    printf("\n 7 - Exit");
+ 
+    while (1)
+    {
+        printf("\n Enter choice : ");
+        scanf("%d", &ch);
+        switch (ch)
+        {
+        case 1:
+            create();
+            break;
+        case 2:
+            insertSpecific();
+            break;
+        case 3:
+            delete();
+            break;
+        case 4:
+            traversebeg();
+            break;
+        case 5:
+            temp2 = h;
+            if (temp2 == NULL)
+                printf("\n Error : List empty to display ");
+            else
+            {
+                printf("\n Reverse order of linked list is : ");
+                traverseend(temp2->n);
+            }
+            break;
+        case 6:
+            search();
+            break;
+        case 7:
+            exit(0);
+        default:
+            printf("\n Wrong choice menu");
+        }
+    }
+
+
+}
+
+
+Q4.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct node
+{
+    struct node *prev;
+    int data;
+    struct node *next;
+} node;
+
+node *head = NULL;
+
+void createNode(node *s, int data)
+{
+    node *r;
+    if (s == NULL)
+    {
+        r = (node *)malloc(sizeof(node));
+        r->data = data;
+        head = r;
+        r->next = head;
+        r->prev = head;
+    }
+    else
+    {
+        if (s->next != head)
+        {
+            do
+            {
+                s = s->next;
+            } while (s->next != head);
+        }
+
+        r = (node *)malloc(sizeof(node));
+        r->data = data;
+        r->next = head;
+        s->next = r;
+        r->prev = s;
+        head->prev = r;
+    }
+}
+
+void traversal(node *s)
+{
+    do
+    {
+        printf("%d-->", s->data);
+        s = s->next;
+    } while (s->next != head);
+}
+
+int main()
+{
+    int x, data;
+    printf("Enter the number of elements: ");
+    scanf("%d", &x);
+    for (int i = 0; i < x; i++)
+    {
+        printf("Enter the data: ");
+        scanf("%d", &head);
+        createNode(head, data);
+    }
+
+    traversal(head);
+    return 0;
+}
