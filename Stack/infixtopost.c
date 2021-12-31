@@ -1,6 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include<strings.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
 
 struct Node{
     char data; 
@@ -105,7 +105,7 @@ char * InToPost(char *infix)
 
 int main()
 {
-  char *infix="a+b*c-d/e+f/t^r";
+  char *infix="a+b*c-d/e+f/g+h*i-j";
   push('#');
   char *postfix=InToPost(infix);
   printf("%s ",postfix);

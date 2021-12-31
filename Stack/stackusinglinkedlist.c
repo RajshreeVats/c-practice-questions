@@ -7,6 +7,7 @@ struct Node{
 
 }*top = NULL;
 
+
 void push (int x) {
     struct Node *t;
     t=(struct Node*)malloc(sizeof(struct Node));
@@ -55,6 +56,15 @@ int peek (int x) {
       return -1;
 
 }
+void isEmpty () {
+    int x= -1;
+    struct Node *t;
+    t=(struct Node*)malloc(sizeof(struct Node));
+    if (top == NULL) 
+    printf("stack empty");
+     else 
+       printf("NO");
+}
 int main () {
     push(10);
     push(20);
@@ -62,7 +72,35 @@ int main () {
     push(20);
     push(30);
     Display();
-    printf("%d ",pop());
-    printf("%d ",peek(3));
+    int a;
+    char choice;
+    do
+    {
+        printf("\n Press 1 to push element to stack ");
+        printf("\n Press 2 to pop element to stack ");
+        printf("\n Press 3 to check if stack is empty ");
+        printf("\n Press 4 to display  \n");
+        scanf("%d",&a);
+        switch(a)
+        {
+            case 1: push (70);
+                    Display();
+ 	    	break;
+             case 2: printf("%d ",pop());
+                    Display();
+	    	break;
+               case 3: isEmpty ();
+ 		    break;
+               case 4: Display() ; 
+	    	break;
+          default:printf("Wrong choice!");
+        }
+      printf("\n Do you want to continue? (Press y/n)");
+      scanf(" %c",&choice);
+    }
+    while(choice=='y');
+   
+    /*printf("%d\n", peek(st, 2)); printf("%d ",peek(3)); */   
+    
   return 0;
 }

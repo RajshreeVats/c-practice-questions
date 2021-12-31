@@ -50,7 +50,13 @@ int peek ( struct stack st, int index ) {
     }
     return x;    
 }
-
+void isEmpty (struct stack *st){
+    int x = -1;
+    if (st->top == -1) 
+        printf("stack empty");
+    else 
+       printf("NO");
+}
 
 int main(){
     struct stack st;
@@ -59,9 +65,35 @@ int main(){
     push (&st, 30);
     push (&st, 40);
     push (&st, 20);
-    push (&st, 70);
-    printf("%d\n", peek(st, 2));
-    printf("%d\n", pop(&st));
     display (st);
+    int a;
+    char choice;
+
+ do
+ {
+ printf("\n Press 1 to push element to stack ");
+ printf("\n Press 2 to pop element to stack ");
+ printf("\n Press 3 to check if stack is empty ");
+ printf("\n Press 4 to display  \n");
+ scanf("%d",&a);
+ switch(a)
+ {
+ case 1: push (&st, 70);
+         display (st);
+ 		break;
+ case 2: printf("%d\n", pop(&st));
+         display (st);
+		break;
+ case 3: isEmpty (&st);
+ 		break;
+ case 4: display (st) ; 
+		break;
+ default:printf("Wrong choice!");
+ }
+   printf("\n Do you want to continue? (Press y/n)");
+   scanf(" %c",&choice);
+}while(choice=='y');
+   
+    /*printf("%d\n", peek(st, 2)); */
    return 0;
 }
